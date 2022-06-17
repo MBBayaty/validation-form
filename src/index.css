@@ -1,13 +1,51 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-400;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.Main-container {
+  @apply flex items-center justify-center h-screen  bg-gray-400;
+}
+
+.Card_container {
+  @apply bg-white flex items-center flex-col justify-center gap-y-4 px-2 md:px-8 rounded-xl shadow-xl w-1/2 max-w-md;
+}
+
+.Card-header {
+  @apply font-bold text-xl text-slate-500 m-4;
+}
+
+.Name-container {
+  @apply flex flex-row w-full justify-between gap-y-4 gap-x-2 mt-4 flex-wrap;
+}
+.Name-style {
+  @apply w-full placeholder:text-xs md:placeholder:text-sm border p-2  border-gray-500 rounded-xl ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-blue-800;
+}
+
+.Card-content {
+  @apply w-full border border-gray-500  text-sm placeholder:text-xs md:placeholder:text-sm rounded-xl p-2 ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-blue-800;
+}
+
+.btn {
+  @apply flex flex-row justify-center items-center gap-x-2 w-1/2 m-4;
+}
+
+.btn-content {
+  @apply border text-xs md:text-sm bg-blue-500 text-white  px-6  py-2  flex items-center justify-center rounded-xl w-1/2;
+}
+
+.checkbox {
+  @apply flex items-center flex-wrap text-xs flex-row-reverse gap-x-1 md:text-sm text-slate-700 gap-y-2 justify-center;
+}
+
+.error {
+  @apply flex flex-col items-center justify-start text-right mt-0 mb-2 text-xs text-red-500;
+}
+.error-checkbox {
+  @apply items-center text-xs text-red-500;
 }
